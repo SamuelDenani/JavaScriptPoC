@@ -1,0 +1,50 @@
+.nav {
+    &-main {
+        position: fixed;
+        top: 0;
+        background-color: rgba(82, 82, 82, 0.3);
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
+        padding: 1em;
+        width: 100%;
+        z-index: 5;
+    }
+    &-options {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    &-option {
+        position: relative;
+        padding: 0 10px;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-top: 2px solid $colorWhite;
+            width: 0;
+            height: 0;
+            transition: width 0.4s ease-in-out;
+        }
+        &:hover {
+            &::before {
+                width: 80%;
+                height: 0;
+            }
+            a {
+                font-size: 14px;
+                font-weight: 500;
+                text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+            }
+        }
+        a {
+            color: $colorWhite;
+            font-size: 14px;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: font-weight 0.3s ease-out;
+        }
+    }
+}

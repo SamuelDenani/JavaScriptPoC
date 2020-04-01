@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto JS - Econverse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <nav class="nav-main">
+        <ul class="nav-options">
+            <li class="nav-option"><a href="#top">início</a></li>
+            <li class="nav-option"><a href="#calculator">calculadora</a></li>
+            <li class="nav-option"><a href="#form">deixe uma mensagem</a></li>
+            <li class="nav-option"><a href="#todo">to-do list</a></li>
+        </ul>
+    </nav>
+    <header id="top" class="hero">
+        <h1 class="main-title">JavaScript</h1>
+        <span class="main-subtitle">uma prova de conceito</span>
+    </header>
+
+    <section id="calculator" class="calculator">
+        <div class="calculator-body">
+            <div class="calculator-visor">
+                <span class="operation"></span>
+                <span class="result"></span>
+                <span class="standby-message">O que quer calcular?</span>
+            </div>
+            <div class="calculator-keyboard">
+                <div class="calculator-keyboard__row">
+                    <button data-type="number">1</button>
+                    <button data-type="number">2</button>
+                    <button data-type="number">3</button>
+                    <button data-type="divide">&divide;</button>
+                </div>
+                <div class="calculator-keyboard__row">
+                    <button data-type="number">4</button>
+                    <button data-type="number">5</button>
+                    <button data-type="number">6</button>
+                    <button data-type="multiply">&times;</button>
+                </div>
+                <div class="calculator-keyboard__row">
+                    <button data-type="number">7</button>
+                    <button data-type="number">8</button>
+                    <button data-type="number">9</button>
+                    <button data-type="subtraction">-</button>
+                </div>
+                <div class="calculator-keyboard__row">
+                    <button data-type="power">^</button>
+                    <button data-type="number">0</button>
+                    <button data-type="sum">+</button>
+                    <button data-type="equals">=</button>
+                </div>
+            </div>
+        </div>
+        <h2 class="main-heading">calculadora</h2>
+    </section>
+
+    <section id="form" class="form">
+        <h2>Deixe uma mensagem para o próximo curioso</h2>
+        <div class="random-message">
+            <p class="user-message"></p>
+            <span class="user-name"></span>
+        </div>
+        <div class="form-body">
+            <form action="#">
+                <fieldset>
+                    <label for="message" id="label-message">
+                        Escreva uma mensagem carinhosa
+                        <textarea name="message" id="message" rows="2" maxlength="80" placeholder="Você sabe escrever né?" spellcheck="false" required></textarea>
+                    </label>
+                    <div class="form-footer">
+                        <label for="name" id="label-name">
+                            Seu belo nome
+                            <input type="text" name="name" id="name" placeholder="ou não né, sei lá..." spellcheck="false">
+                        </label>
+                        <button type="submit">Lança a braba!</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+
+    <section id="todo" class="todo">
+        <h2>lista to-do</h2>
+        <div class="todo-body">
+            <fieldset class="todo-form">
+                <input class="todo-form__input" type="text" placeholder="Qual a tarefa?" spellcheck="false">
+                <button id="todo-submit" class="todo-form__submit">anotar</button>
+            </fieldset>
+            <div class="todo-tasks">
+                <span class="todo-message">você anda meio desocupado né?!</span>
+                <div class="todo-tasks__incomplete"></div>
+               
+                <div class="todo-tasks__complete"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <small>desenvolvido por <a href="https://github.com/samueldenani" target="_blank">Samuel Denani</a></small>
+    </footer>
+
+    <script src="./js/calculator.js"></script>
+    <script src="./js/todo.js"></script>
+</body>
+</html>

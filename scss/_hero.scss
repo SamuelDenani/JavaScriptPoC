@@ -1,0 +1,35 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/images/javascript-bg.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 95vh;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #2d2d2d;
+        opacity: 0.5;
+        width: 100%;
+        height: 95vh;
+    }
+    .main {
+        &-title {
+            font-size: 45px;
+            margin-bottom: 0.5em;
+            z-index: 2;
+        }
+        &-subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+    }
+}

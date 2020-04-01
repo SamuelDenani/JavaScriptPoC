@@ -1,0 +1,9 @@
+body {
+    color: $colorWhite;
+    background-color: $colorBlack;
+}
+
+*::selection {
+    color: $colorBlack;
+    background-color: $colorWhite;
+}

@@ -1,0 +1,98 @@
+.form {
+    background-color: $colorBlue;
+    padding: 4em 0;
+    height: 70vh;
+    h2 {
+        color: $colorWhite;
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: -4px 2px 0 $colorBlack;
+        margin-bottom: 2em;
+        &::selection {
+            color: $colorBlack;
+            text-shadow: -4px 2px 0 $colorWhite;
+        }
+    }
+    form {
+        background-color: $colorWhite;
+        border-radius: 15px;
+        box-shadow: -5px 4px 4px 0px $shadow;
+        margin: 0 auto;
+        padding: 2em 3em;
+        width: 70%;
+        fieldset {
+            border: none;
+            #label-message {
+                color: $colorBlack;
+                font-size: 25px;    
+                #message {
+                    color: $colorWhite;
+                    font-size: 16px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    border-radius: 7px;
+                    background-color: $colorBlue;
+                    outline: none;
+                    resize: none;
+                    margin: 0.5em 0 1.5em;
+                    padding: 1em 1em;
+                    width: 100%;
+                    &::placeholder {
+                        color: $colorWhite;
+                    }
+                    &::selection {
+                        color: $colorBlack;
+                        background-color: $colorWhite;
+                    }
+                }
+            }
+            .form-footer {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: flex-start;
+            }
+            #label-name {
+                color: $colorBlack;
+                font-size: 20px;
+                width: 40%;
+                #name {
+                    color: $colorWhite;
+                    font-size: 14px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    border-radius: 7px;
+                    background-color: $colorBlue;
+                    outline: none;
+                    resize: none;
+                    margin-top: 0.5em;
+                    padding: 1em 1em;
+                    width: 100%;
+                    &::placeholder {
+                        color: $colorWhite;
+                    }
+                    &::selection {
+                        color: $colorBlack;
+                        background-color: $colorWhite;
+                    }
+                }
+            }
+            button[type=submit] {
+                position: relative;
+                color: $colorWhite;
+                font-size: 18px;
+                font-weight: 700;
+                background-color: $colorBlue;
+                border: none;
+                border-radius: 7px;
+                cursor: pointer;
+                outline: none;
+                margin-left: auto;
+                padding: 0.8em 3em;
+                transition: background-color 0.3s ease-out, color 0.2s ease-in;
+            }
+        }
+    }
+}
