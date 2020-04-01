@@ -67,6 +67,9 @@
             }
         }
     }
+    &-message {
+        display: none;
+    }
     &-tasks {
         display: flex;
         flex-direction: column;
@@ -74,6 +77,19 @@
         justify-content: center;
         margin-top: 1em;
         width: 100%;
+        &.is--empty {
+            .todo {
+                &-message {
+                    display: block;
+                    color: $colorPink;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+                &-tasks__incomplete {
+                    border: none;
+                }
+            }   
+        }
         &__incomplete {
             width: 100%;
             border-bottom: 1px solid $colorGrayTransparent;
@@ -90,6 +106,7 @@
                 padding: 0.5em 1em;
                 margin-bottom: 1em;
                 z-index: 1;
+                
                 &-checkbox {
                     border: 1px solid $colorPink;
                     border-radius: 2px;
@@ -168,15 +185,6 @@
                     }
                 }
             }
-        }
-    }
-    &-message {
-        display: none;
-        color: $colorPink;
-        font-size: 14px;
-        font-weight: 500;
-        &.is--shown {
-            display: block;
         }
     }
 }

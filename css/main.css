@@ -295,6 +295,8 @@ body {
       transition: font-weight 0.3s ease-in; }
       .todo-form__submit:hover {
         font-weight: 600; }
+  .todo-message {
+    display: none; }
   .todo-tasks {
     display: flex;
     flex-direction: column;
@@ -302,6 +304,13 @@ body {
     justify-content: center;
     margin-top: 1em;
     width: 100%; }
+    .todo-tasks.is--empty .todo-message {
+      display: block;
+      color: #e41d44;
+      font-size: 14px;
+      font-weight: 500; }
+    .todo-tasks.is--empty .todo-tasks__incomplete {
+      border: none; }
     .todo-tasks__incomplete {
       width: 100%;
       border-bottom: 1px solid rgba(51, 51, 51, 0.7);
@@ -382,13 +391,6 @@ body {
           transition: width 0.4s ease-out; }
         .todo-tasks__complete .task:hover::after {
           width: 100%; }
-  .todo-message {
-    display: none;
-    color: #e41d44;
-    font-size: 14px;
-    font-weight: 500; }
-    .todo-message.is--shown {
-      display: block; }
 
 .footer {
   padding: 1em 0; }

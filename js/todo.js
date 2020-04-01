@@ -5,16 +5,19 @@ completeTasks;
 window.addEventListener('load', function() {
     incompleteTasks = window.localStorage.getItem('incompleteTasks') ? window.localStorage.getItem('incompleteTasks').split(',') : new Array();
     completeTasks = window.localStorage.getItem('completeTasks') ? window.localStorage.getItem('completeTasks').split(',') : new Array();
-    if (incompleteTasks.length) {
-        incompleteTasks.forEach(task => {
-            appendTask(task, 'incomplete')
-        })
+
+    if (!incompleteTasks.length && !completeTasks.length) {
+        document.querySelector('.todo-tasks').classList.add('is--empty')
+    } else {
+        if (incompleteTasks.length) {
+            incompleteTasks.forEach(task => appendTask(task, 'incomplete'))
+        }
+    
+        if (completeTasks.length) {
+            completeTasks.forEach(task => appendTask(task, 'complete'))
+        }
     }
-    if (completeTasks.length) {
-        completeTasks.forEach(task => {
-            appendTask(task, 'complete')
-        })
-    }
+
 })
 
 $input.addEventListener('change', function() {
@@ -29,9 +32,10 @@ let storeNewTask = (task, div) => {
         window.localStorage.clear();
         window.localStorage.setItem('incompleteTasks', incompleteTasks);
         window.localStorage.setItem('completeTasks', completeTasks);
-        appendTask(task, div)
+        (incompleteTasks.length || completeTasks.length) ? document.querySelector('.todo-tasks').classList.remove('is--empty') : null;
+        appendTask(task, div);
     } else {
-        alert('Tarefa já cadastrada')
+        alert('Tarefa já cadastrada');
     }
 }
 
@@ -45,13 +49,9 @@ let appendTask = (task, div) => {
     $checkbox.addEventListener('click', function() {
         toggleTask(this);
     })
-    $task.insertBefore($checkbox, $task.firstChild)
+    $task.insertBefore($checkbox, $task.firstChild);
 
-    if (div == 'incomplete') {
-        document.querySelector('.todo-tasks__incomplete').appendChild($task)
-    } else {
-        document.querySelector('.todo-tasks__complete').appendChild($task)
-    }
+    (div == 'incomplete') ? document.querySelector('.todo-tasks__incomplete').appendChild($task) : document.querySelector('.todo-tasks__complete').appendChild($task);
 }
 
 let toggleTask = checkbox => {
