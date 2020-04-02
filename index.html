@@ -60,25 +60,19 @@
     </section>
 
     <section id="form" class="form">
-        <h2>Deixe uma mensagem para o próximo curioso</h2>
+        <h2>Você joga lol?</h2>
         <div class="random-message">
             <p class="user-message"></p>
             <span class="user-name"></span>
         </div>
         <div class="form-body">
-            <form action="#">
+            <form>
                 <fieldset>
-                    <label for="message" id="label-message">
-                        Escreva uma mensagem carinhosa
-                        <textarea name="message" id="message" rows="2" maxlength="80" placeholder="Você sabe escrever né?" spellcheck="false" required></textarea>
+                    <label for="summoner" id="label-summoner">
+                        <input type="text" name="summoner" id="summoner-name" placeholder="Qual seu nick?" spellcheck="false">
+                        se você não joga, pode usar meu nick pra testar: Thresh Rosa
                     </label>
-                    <div class="form-footer">
-                        <label for="name" id="label-name">
-                            Seu belo nome
-                            <input type="text" name="name" id="name" placeholder="ou não né, sei lá..." spellcheck="false">
-                        </label>
-                        <button type="submit">Lança a braba!</button>
-                    </div>
+                    <button id="search-player">Lança a braba!</button>
                 </fieldset>
             </form>
         </div>
@@ -105,6 +99,7 @@
     </footer>
 
     <script src="./js/calculator.js"></script>
+    <script src="./js/form.js"></script>
     <script src="./js/todo.js"></script>
 </body>
 </html>

@@ -21,44 +21,14 @@
         box-shadow: -5px 4px 4px 0px $shadow;
         margin: 0 auto;
         padding: 2em 3em;
-        width: 70%;
+        width: 35%;
         fieldset {
             border: none;
-            #label-message {
-                color: $colorBlack;
-                font-size: 25px;    
-                #message {
-                    color: $colorWhite;
-                    font-size: 16px;
-                    font-family: 'Poppins', sans-serif;
-                    font-weight: 400;
-                    border-radius: 7px;
-                    background-color: $colorBlue;
-                    outline: none;
-                    resize: none;
-                    margin: 0.5em 0 1.5em;
-                    padding: 1em 1em;
-                    width: 100%;
-                    &::placeholder {
-                        color: $colorWhite;
-                    }
-                    &::selection {
-                        color: $colorBlack;
-                        background-color: $colorWhite;
-                    }
-                }
-            }
-            .form-footer {
-                display: flex;
-                flex-direction: row;
-                align-items: flex-end;
-                justify-content: flex-start;
-            }
-            #label-name {
-                color: $colorBlack;
-                font-size: 20px;
+            #label-summoner {
+                color: transparentize($color: #5cadc0, $amount: 0.2);
+                font-size: 16px;
                 width: 40%;
-                #name {
+                #summoner-name {
                     color: $colorWhite;
                     font-size: 14px;
                     font-family: 'Poppins', sans-serif;
@@ -79,7 +49,7 @@
                     }
                 }
             }
-            button[type=submit] {
+            button {
                 position: relative;
                 color: $colorWhite;
                 font-size: 18px;
@@ -89,7 +59,7 @@
                 border-radius: 7px;
                 cursor: pointer;
                 outline: none;
-                margin-left: auto;
+                margin-top: 40px;
                 padding: 0.8em 3em;
                 transition: background-color 0.3s ease-out, color 0.2s ease-in;
             }
