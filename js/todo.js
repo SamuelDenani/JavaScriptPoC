@@ -21,13 +21,13 @@ window.addEventListener('load', function() {
 })
 
 $input.addEventListener('change', function() {
-    var taskVal = this.value;
+    var taskVal = this.value.trim();
     this.value = '';
     storeNewTask(taskVal, 'incomplete');
 })
 
 let storeNewTask = (task, div) => {
-    if (incompleteTasks.indexOf(task)) {
+    if(task.length) {
         (div == 'incomplete') ? incompleteTasks.push(task) : completeTasks.push(task);
         window.localStorage.clear();
         window.localStorage.setItem('incompleteTasks', incompleteTasks);
@@ -35,7 +35,7 @@ let storeNewTask = (task, div) => {
         (incompleteTasks.length || completeTasks.length) ? document.querySelector('.todo-tasks').classList.remove('is--empty') : null;
         appendTask(task, div);
     } else {
-        alert('Tarefa já cadastrada');
+        alert('Tarefas têm que ter um nome')
     }
 }
 

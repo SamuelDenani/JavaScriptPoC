@@ -14,6 +14,9 @@ body {
   padding: 1em;
   width: 100%;
   z-index: 5; }
+  @media (max-width: 768px) {
+    .nav-main {
+      padding: 1em 0; } }
 .nav-options {
   display: flex;
   flex-direction: row;
@@ -45,6 +48,14 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     transition: font-weight 0.3s ease-out; }
+  @media (max-width: 768px) {
+    .nav-option::before {
+      content: unset; }
+    .nav-option a {
+      font-size: 10px; }
+    .nav-option:hover a {
+      font-size: 10;
+      font-weight: normal; } }
 
 .hero {
   display: flex;
@@ -66,6 +77,15 @@ body {
     opacity: 0.5;
     width: 100%;
     height: 95vh; }
+  @media (max-width: 768px) {
+    .hero {
+      height: 100vh; }
+      .hero::before {
+        height: 100vh; }
+      .hero .main-title {
+        font-size: 32px; }
+      .hero .main-subtitle {
+        font-size: 16px; } }
   .hero .main-title {
     font-size: 45px;
     margin-bottom: 0.5em;
@@ -100,7 +120,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #fafafa;
-    border-radius: 25px;
+    border-radius: 21px;
     box-shadow: -5px 4px 4px 0px rgba(31, 31, 31, 0.6);
     margin-right: 10em;
     padding: 3em 2em; }
@@ -149,12 +169,36 @@ body {
         margin: 5px;
         width: 60px;
         height: 65px; }
+  @media (max-width: 768px) {
+    .calculator {
+      padding: 2em 0;
+      height: 60vh; }
+      .calculator h2 {
+        font-size: 22px;
+        text-shadow: -2px -1px 0px #0f0f0f; }
+      .calculator-body {
+        padding: 2em 1em;
+        margin-right: 2em; }
+      .calculator-visor {
+        height: 50px;
+        margin-bottom: 5px; }
+        .calculator-visor .operation {
+          font-size: 18px; }
+        .calculator-visor .result {
+          font-size: 20px; }
+        .calculator-visor .standby-message {
+          font-size: 16px; }
+      .calculator-keyboard__row button {
+        font-size: 18px;
+        margin: 3px;
+        width: 40px;
+        height: 40px; } }
 
-.form {
+.weather {
   background-color: #5cadc0;
   padding: 4em 0;
   height: 70vh; }
-  .form h2 {
+  .weather h2 {
     color: #fafafa;
     font-size: 40px;
     font-weight: 600;
@@ -162,23 +206,22 @@ body {
     text-transform: uppercase;
     text-shadow: -4px 2px 0 #0f0f0f;
     margin-bottom: 2em; }
-    .form h2::selection {
+    .weather h2::selection {
       color: #0f0f0f;
       text-shadow: -4px 2px 0 #fafafa; }
-  .form form {
-    background-color: #fafafa;
-    border-radius: 15px;
-    box-shadow: -5px 4px 4px 0px rgba(31, 31, 31, 0.6);
-    margin: 0 auto;
-    padding: 2em 3em;
-    width: 35%; }
-    .form form fieldset {
-      border: none; }
-      .form form fieldset #label-summoner {
-        color: rgba(92, 173, 192, 0.8);
-        font-size: 16px;
-        width: 40%; }
-        .form form fieldset #label-summoner #summoner-name {
+  .weather-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around; }
+    .weather-content form {
+      background-color: #fafafa;
+      border-radius: 15px;
+      box-shadow: -5px 4px 4px 0px rgba(31, 31, 31, 0.6);
+      padding: 2em 3em;
+      width: 35%; }
+      .weather-content form fieldset {
+        border: none; }
+        .weather-content form fieldset #city-name {
           color: #fafafa;
           font-size: 14px;
           font-family: 'Poppins', sans-serif;
@@ -190,24 +233,104 @@ body {
           margin-top: 0.5em;
           padding: 1em 1em;
           width: 100%; }
-          .form form fieldset #label-summoner #summoner-name::placeholder {
+          .weather-content form fieldset #city-name::placeholder {
             color: #fafafa; }
-          .form form fieldset #label-summoner #summoner-name::selection {
+          .weather-content form fieldset #city-name::selection {
             color: #0f0f0f;
             background-color: #fafafa; }
-      .form form fieldset button {
-        position: relative;
-        color: #fafafa;
-        font-size: 18px;
-        font-weight: 700;
-        background-color: #5cadc0;
-        border: none;
-        border-radius: 7px;
-        cursor: pointer;
-        outline: none;
-        margin-top: 40px;
-        padding: 0.8em 3em;
-        transition: background-color 0.3s ease-out, color 0.2s ease-in; }
+        .weather-content form fieldset button {
+          position: relative;
+          color: #fafafa;
+          font-size: 18px;
+          font-weight: 700;
+          background-color: #5cadc0;
+          border: none;
+          border-radius: 7px;
+          cursor: pointer;
+          outline: none;
+          margin-top: 40px;
+          padding: 0.8em 3em;
+          transition: background-color 0.3s ease-out, color 0.2s ease-in; }
+    .weather-content .forecast-response {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      color: #5cadc0;
+      text-align: center;
+      background-color: #fafafa;
+      border-radius: 15px;
+      box-shadow: -5px 4px 4px 0px rgba(31, 31, 31, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      padding: 0;
+      width: 0;
+      max-height: 330px;
+      overflow: hidden;
+      transition: opacity 0.7s ease-in, visibility 0.7s ease-in, width 0.4s ease; }
+      .weather-content .forecast-response.is--visible {
+        opacity: 1;
+        visibility: visible;
+        padding: 2em 3em;
+        width: 35%; }
+      .weather-content .forecast-response .day-card {
+        width: 45%; }
+        .weather-content .forecast-response .day-card h3 {
+          font-size: 24px;
+          text-transform: uppercase;
+          margin-bottom: 15px; }
+        .weather-content .forecast-response .day-card .weather-status {
+          font-size: 18px;
+          font-weight: 700;
+          font-style: italic;
+          margin-bottom: 10px; }
+        .weather-content .forecast-response .day-card .current-temp {
+          font-size: 16px;
+          font-weight: 600;
+          margin-bottom: 20px; }
+        .weather-content .forecast-response .day-card span {
+          display: inline-block;
+          font-weight: 30;
+          width: 48%; }
+  @media (max-width: 768px) {
+    .weather {
+      padding: 2em 0;
+      height: auto;
+      min-height: 40vh; }
+      .weather h2 {
+        font-size: 22px;
+        text-shadow: -2px 1px 0 #0f0f0f;
+        margin: 0 auto 1em;
+        width: 80%; }
+      .weather-content {
+        flex-direction: column;
+        align-items: center; }
+        .weather-content form {
+          margin: 0 0 2em;
+          padding: 1.5em 2em;
+          width: 85%; }
+          .weather-content form fieldset button {
+            font-size: 15px;
+            margin: 15px 0 0; }
+        .weather-content .forecast-response {
+          flex-direction: column;
+          align-items: center;
+          opacity: 0;
+          visibility: hidden;
+          width: 85%;
+          max-height: 0;
+          transition: opacity 0.7s ease-in, visibility 0.7s ease-in, height 0.4s ease; }
+          .weather-content .forecast-response.is--visible {
+            padding: 2em 0;
+            width: 85%;
+            max-height: inherit; }
+          .weather-content .forecast-response .day-card {
+            width: 100%; }
+            .weather-content .forecast-response .day-card:first-child {
+              margin-bottom: 1.75em; }
+            .weather-content .forecast-response .day-card h3 {
+              font-size: 20px; }
+            .weather-content .forecast-response .day-card span {
+              width: 30%; } }
 
 .todo {
   display: flex;
@@ -366,6 +489,33 @@ body {
           transition: width 0.4s ease-out; }
         .todo-tasks__complete .task:hover::after {
           width: 100%; }
+  @media (max-width: 768px) {
+    .todo {
+      padding: 2em 0;
+      min-height: 25vh; }
+      .todo h2 {
+        font-size: 22px;
+        text-shadow: -2px 1px 0 #0f0f0f; }
+      .todo-body {
+        margin-left: 1em;
+        padding: 2em 1.5em;
+        width: 60%; }
+      .todo-form {
+        margin-bottom: 0.5em; }
+        .todo-form__input {
+          font-size: 14px; }
+        .todo-form__submit {
+          font-size: 10px; }
+      .todo-tasks {
+        margin-top: 0.5em; }
+        .todo-tasks.is--empty .todo-message {
+          font-size: 12px; }
+        .todo-tasks__incomplete {
+          margin-bottom: 0.75em; }
+          .todo-tasks__incomplete .task {
+            font-size: 14px; }
+        .todo-tasks__complete .task {
+          font-size: 14px; } }
 
 .footer {
   padding: 1em 0; }
@@ -388,5 +538,10 @@ body {
         font-weight: 700;
         text-decoration: none;
         text-shadow: -2px 2px 0px #e41d44; }
+    @media (max-width: 768px) {
+      .footer small {
+        font-size: 10px; }
+        .footer small a {
+          font-size: 12px; } }
 
 /*# sourceMappingURL=main.css.map */

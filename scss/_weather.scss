@@ -1,0 +1,166 @@
+.weather {
+    background-color: $colorBlue;
+    padding: 4em 0;
+    height: 70vh;
+    h2 {
+        color: $colorWhite;
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: -4px 2px 0 $colorBlack;
+        margin-bottom: 2em;
+        &::selection {
+            color: $colorBlack;
+            text-shadow: -4px 2px 0 $colorWhite;
+        }
+    }
+    &-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        form {
+            background-color: $colorWhite;
+            border-radius: 15px;
+            box-shadow: -5px 4px 4px 0px $shadow;
+            padding: 2em 3em;
+            width: 35%;
+            fieldset {
+                border: none;
+                #city-name {
+                    color: $colorWhite;
+                    font-size: 14px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    border-radius: 7px;
+                    background-color: $colorBlue;
+                    outline: none;
+                    resize: none;
+                    margin-top: 0.5em;
+                    padding: 1em 1em;
+                    width: 100%;
+                    &::placeholder {
+                        color: $colorWhite;
+                    }
+                    &::selection {
+                        color: $colorBlack;
+                        background-color: $colorWhite;
+                    }
+                }
+                button {
+                    position: relative;
+                    color: $colorWhite;
+                    font-size: 18px;
+                    font-weight: 700;
+                    background-color: $colorBlue;
+                    border: none;
+                    border-radius: 7px;
+                    cursor: pointer;
+                    outline: none;
+                    margin-top: 40px;
+                    padding: 0.8em 3em;
+                    transition: background-color 0.3s ease-out, color 0.2s ease-in;
+                }
+            }
+        }
+        .forecast-response {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            color: $colorBlue;
+            text-align: center;
+            background-color: $colorWhite;
+            border-radius: 15px;
+            box-shadow: -5px 4px 4px 0px $shadow;
+            opacity: 0;
+            visibility: hidden;
+            padding: 0;
+            width: 0;
+            max-height: 330px;
+            overflow: hidden;
+            transition: opacity 0.7s ease-in, visibility 0.7s ease-in, width 0.4s ease;
+            &.is--visible {
+                opacity: 1;
+                visibility: visible;
+                padding: 2em 3em;
+                width: 35%;
+            }
+            .day-card {
+                width: 45%;
+                h3 {
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                }
+                .weather-status {
+                    font-size: 18px;
+                    font-weight: 700;
+                    font-style: italic;
+                    margin-bottom: 10px;
+                }
+                .current-temp {
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+                span {
+                    display: inline-block;
+                    font-weight: 30;
+                    width: 48%;
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        padding: 2em 0;
+        height: auto;
+        min-height: 40vh;
+        h2 {
+            font-size: 22px;
+            text-shadow: -2px 1px 0 $colorBlack;
+            margin: 0 auto 1em;
+            width: 80%;
+        }
+        &-content {
+            flex-direction: column;
+            align-items: center;
+            form {
+                margin: 0 0 2em;
+                padding: 1.5em 2em;
+                width: 85%;
+                fieldset {
+                    button {
+                        font-size: 15px;
+                        margin: 15px 0 0;
+                    }
+                }
+            }
+            .forecast-response {
+                flex-direction: column;
+                align-items: center;
+                opacity: 0;
+                visibility: hidden;
+                width: 85%;
+                max-height: 0;
+                transition: opacity 0.7s ease-in, visibility 0.7s ease-in, height 0.4s ease;
+                &.is--visible {
+                    padding: 2em 0;
+                    width: 85%;
+                    max-height: inherit;
+                }
+                .day-card {
+                    width: 100%;
+                    &:first-child {
+                        margin-bottom: 1.75em;
+                    }
+                    h3 {
+                        font-size: 20px;
+                    }
+                    span {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+}

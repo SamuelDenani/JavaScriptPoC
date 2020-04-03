@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto JS - Econverse</title>
+
+    <title>JavaScript - uma prova de conceito</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -13,7 +15,7 @@
         <ul class="nav-options">
             <li class="nav-option"><a href="#top">início</a></li>
             <li class="nav-option"><a href="#calculator">calculadora</a></li>
-            <li class="nav-option"><a href="#form">deixe uma mensagem</a></li>
+            <li class="nav-option"><a href="#weather">deixe uma mensagem</a></li>
             <li class="nav-option"><a href="#todo">to-do list</a></li>
         </ul>
     </nav>
@@ -59,22 +61,33 @@
         <h2 class="main-heading">calculadora</h2>
     </section>
 
-    <section id="form" class="form">
-        <h2>Você joga lol?</h2>
-        <div class="random-message">
-            <p class="user-message"></p>
-            <span class="user-name"></span>
-        </div>
-        <div class="form-body">
-            <form>
+    <section id="weather" class="weather">
+        <h2>Que tal saber um pouco sobre o clima?</h2>
+        <div class="weather-content">
+            <form id="weather-form">
                 <fieldset>
-                    <label for="summoner" id="label-summoner">
-                        <input type="text" name="summoner" id="summoner-name" placeholder="Qual seu nick?" spellcheck="false">
-                        se você não joga, pode usar meu nick pra testar: Thresh Rosa
-                    </label>
-                    <button id="search-player">Lança a braba!</button>
+                    <input type="text" name="city-name" id="city-name" placeholder="Pra qual cidade?" spellcheck="false">
+                    <button id="get-forecast">Prever!</button>
                 </fieldset>
             </form>
+            <div class="forecast-response">
+                <div id="today" class="day-card">
+                    <h3>hoje</h3>
+                    <img src="" alt="Status do clima" title="Status do clima">
+                    <p class="weather-status"></p>
+                    <p class="current-temp"></p>
+                    <span class="min-temp"></span>
+                    <span class="max-temp"></span>
+                </div>
+                <div id="tomorrow" class="day-card">
+                    <h3>amanhã</h3>
+                    <img src="" alt="Status do clima" title="Status do clima">
+                    <p class="weather-status"></p>
+                    <p class="current-temp"></p>
+                    <span class="min-temp"></span>
+                    <span class="max-temp"></span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -99,7 +112,7 @@
     </footer>
 
     <script src="./js/calculator.js"></script>
-    <script src="./js/form.js"></script>
+    <script src="./js/weather.js"></script>
     <script src="./js/todo.js"></script>
 </body>
 </html>

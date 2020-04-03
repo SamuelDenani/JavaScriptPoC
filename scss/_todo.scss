@@ -187,4 +187,45 @@
             }
         }
     }
+    @media (max-width: 768px) {
+        padding: 2em 0;
+        min-height: 25vh;
+        h2 {
+            font-size: 22px;
+            text-shadow: -2px 1px 0 $colorBlack;
+        }
+        &-body {
+            margin-left: 1em;
+            padding: 2em 1.5em;
+            width: 60%;
+        }
+        &-form {
+            margin-bottom: 0.5em;
+            &__input {
+                font-size: 14px;
+            }
+            &__submit {
+                font-size: 10px;
+            }
+        }
+        &-tasks {
+            margin-top: 0.5em;
+            &.is--empty {
+                .todo-message {
+                    font-size: 12px;
+                }
+            }
+            &__incomplete {
+                margin-bottom: 0.75em;
+                .task {
+                    font-size: 14px;
+                }
+            }
+            &__complete {
+                .task {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
 }
