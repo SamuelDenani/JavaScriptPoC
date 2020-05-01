@@ -234,8 +234,13 @@ body {
       border-radius: 15px;
       box-shadow: -5px 4px 4px 0px rgba(31, 31, 31, 0.6);
       padding: 2em 3em;
+<<<<<<< HEAD
       margin-right: 3em;
       width: 35%; }
+=======
+      width: 35%;
+      margin-right: 3em; }
+>>>>>>> 5a36fc2b6aa5866176130c6f38953c2c0a62d10f
       .weather-content form fieldset {
         border: none; }
         .weather-content form fieldset #city-name {
