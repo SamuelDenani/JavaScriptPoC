@@ -18,12 +18,13 @@
     &-content {
         display: flex;
         align-items: flex-start;
-        justify-content: space-around;
+        justify-content: center;
         form {
             background-color: $colorWhite;
             border-radius: 15px;
             box-shadow: -5px 4px 4px 0px $shadow;
             padding: 2em 3em;
+            margin-right: 3em;
             width: 35%;
             fieldset {
                 border: none;

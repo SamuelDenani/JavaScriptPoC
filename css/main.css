@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth; }
+
 body {
   color: #fafafa;
   background-color: #0f0f0f; }
@@ -225,12 +228,13 @@ body {
   .weather-content {
     display: flex;
     align-items: flex-start;
-    justify-content: space-around; }
+    justify-content: center; }
     .weather-content form {
       background-color: #fafafa;
       border-radius: 15px;
       box-shadow: -5px 4px 4px 0px rgba(31, 31, 31, 0.6);
       padding: 2em 3em;
+      margin-right: 3em;
       width: 35%; }
       .weather-content form fieldset {
         border: none; }
